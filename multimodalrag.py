@@ -45,7 +45,7 @@ class MultiModalRAG:
     def _initialize_gemini(self):
         """ Initializes the Gemini API client. """
         try:
-            genai.configure(api_key="AIzaSyBD-usiTkftZzjPy0v1pYK4NpI8kxv9s0c")
+            genai.configure(api_key="")
             return genai.GenerativeModel('gemini-1.5-flash')
         except Exception as e:
             logging.error(f"Error initializing Gemini API: {e}")
