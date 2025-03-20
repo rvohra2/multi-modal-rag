@@ -4,6 +4,7 @@ from transformers import Qwen2VLForConditionalGeneration, AutoProcessor, BitsAnd
 from qwen_vl_utils import process_vision_info
 import google.generativeai as genai
 import logging
+import os
 
 class MultiModalRAG:
     def __init__(self):
@@ -45,7 +46,7 @@ class MultiModalRAG:
     def _initialize_gemini(self):
         """ Initializes the Gemini API client. """
         try:
-            genai.configure(api_key="")
+            genai.configure(api_key=os.environ['GEMINI_API_KEY'])
             return genai.GenerativeModel('gemini-1.5-flash')
         except Exception as e:
             logging.error(f"Error initializing Gemini API: {e}")
