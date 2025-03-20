@@ -15,7 +15,7 @@ class VectorSearchService:
             collection_id (str): Unique identifier for the collection.
             create_collection (bool, optional): Whether to create a new collection. Defaults to True.
         """
-        qdrant_url = "https://3354535d-53f7-4282-bc6f-51f39bf02273.us-west-1-0.aws.cloud.qdrant.io:6333"
+        qdrant_url = None
         self.vector_db_manager  = QdrantDatabase(qdrant_url=None, collection_name="colpali", create_collection=create_collection)
 
         try:
